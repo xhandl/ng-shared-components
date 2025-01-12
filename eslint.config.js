@@ -1,34 +1,34 @@
 // @ts-check
-const eslint = require("@eslint/js");
-const tseslint = require("typescript-eslint");
-const angular = require("angular-eslint");
+const eslint = require('@eslint/js');
+const tseslint = require('typescript-eslint');
+const angular = require('angular-eslint');
 
 module.exports = tseslint.config(
   {
-    files: ["**/*.ts"],
+    files: ['**/*.ts'],
     extends: [
       eslint.configs.recommended,
       ...tseslint.configs.recommended,
       ...tseslint.configs.stylistic,
-      ...angular.configs.tsRecommended,
+      ...angular.configs.tsRecommended
     ],
     processor: angular.processInlineTemplates,
     rules: {
-      "@angular-eslint/directive-selector": [
-        "error",
+      '@angular-eslint/directive-selector': [
+        'error',
         {
-          type: "attribute",
-          prefix: "app",
-          style: "camelCase",
-        },
+          type: 'attribute',
+          prefix: 'xh',
+          style: 'camelCase'
+        }
       ],
-      "@angular-eslint/component-selector": [
-        "error",
+      '@angular-eslint/component-selector': [
+        'error',
         {
-          type: "element",
-          prefix: "app",
-          style: "kebab-case",
-        },
+          type: 'element',
+          prefix: 'xh',
+          style: 'kebab-case'
+        }
       ],
       '@typescript-eslint/no-unused-vars': [
         'error',
@@ -40,14 +40,14 @@ module.exports = tseslint.config(
         }
       ],
       '@typescript-eslint/no-inferrable-types': 'off'
-    },
+    }
   },
   {
-    files: ["**/*.html"],
+    files: ['**/*.html'],
     extends: [
       ...angular.configs.templateRecommended,
-      ...angular.configs.templateAccessibility,
+      ...angular.configs.templateAccessibility
     ],
-    rules: {},
+    rules: {}
   }
 );

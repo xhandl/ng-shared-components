@@ -1,5 +1,5 @@
 {
-  "name": "ng-reusable-components",
+  "name": "ng-shared-components",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -35,7 +35,7 @@
     "@angular/compiler-cli": "^19.0.6",
     "@types/jasmine": "~5.1.5",
     "angular-eslint": "19.0.2",
-    "eslint": "^9.17.0",
+    "eslint": "^9.18.0",
     "jasmine-core": "~5.5.0",
     "karma": "~6.4.4",
     "karma-chrome-launcher": "~3.2.0",
