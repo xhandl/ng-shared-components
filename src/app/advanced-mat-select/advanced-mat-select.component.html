@@ -1,0 +1,41 @@
+<mat-form-field>
+  <mat-label>{{ selectLabel() }}</mat-label>
+  <mat-select [multiple]="multi()"
+              [formControl]="selectFormControl"
+              (opened)="focusSearchInput()"
+              (closed)="clearSearch()"
+              [panelWidth]="panelWidth()">
+    <mat-select-trigger>
+      {{ selectTriggerLabel() }}
+    </mat-select-trigger>
+    <div class="search" [class.search--multi]="multi()">
+      @if (multi()) {
+        <mat-checkbox (change)="$event ? toggleAll() : null"
+                      [checked]="isAnySelected() && isAllSelected()"
+                      [indeterminate]="isAnySelected() && !isAllSelected()"
+                      [disabled]="!filteredWrappedOptions().length"/>
+      }
+
+      <input matInput
+             #searchInput
+             type="text"
+             class="search__input"
+             [class.search-container__input--active]="searchFormControl.value"
+             [formControl]="searchFormControl"
+             [placeholder]="searchPlaceholder()"
+             (click)="$event.stopPropagation()"
+             (keydown)="preventKeydownPropagation($event)"
+             autocomplete="off"/>
+
+      @if (searchFormControl.value) {
+        <mat-icon fontIcon="close"
+                  class="search__clear-btn"
+                  (click)="$event.stopPropagation();clearSearch();"/>
+      }
+    </div>
+
+    @for (option of filteredWrappedOptions(); track option.key) {
+      <mat-option [value]="option.key" (click)="toggleOption(option)">{{ option.label }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>

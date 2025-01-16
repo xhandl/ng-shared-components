@@ -1,0 +1,23 @@
+<xh-advanced-mat-select [options]="options()"
+                        [formControl]="selectedOption"
+                        selectLabel="Object select"
+                        searchPlaceholder="Search..."
+                        [optionLabel]="optionLabel"
+                        [optionKey]="optionKey"
+                        [searchBy]="searchBy"/>
+
+<div class="actions">
+  <button mat-button
+          (click)="addOption()">
+    Add option
+  </button>
+  <button mat-button
+          (click)="reset()">
+    Reset
+  </button>
+</div>
+
+<div class="result">
+  <div>Result:</div>
+  <pre>{{ selectedOption.value | xhJson }}</pre>
+</div>

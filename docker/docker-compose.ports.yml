@@ -1,0 +1,4 @@
+services:
+  ng-shared-components:
+    ports:
+      - ${PORT:-80}:8080
