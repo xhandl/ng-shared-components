@@ -78,8 +78,6 @@ export class AdvancedMatSelectComponent<T, K> implements ControlValueAccessor {
     const keyFn = this.optionKey();
     const searchByFn = this.searchBy();
 
-    console.log('wrappedOptions', options);
-
     return options.map((item) =>
       new OptionWrapper(item, labelFn, keyFn, searchByFn)
     );
@@ -153,13 +151,10 @@ export class AdvancedMatSelectComponent<T, K> implements ControlValueAccessor {
         this.selectFormControl.setValue(selectedOption?.key ?? null);
         this._onChange(selectedOption?.item);
       }
-
-      console.log('emit selectFormControl, _onChange', selectedOptions);
     });
   }
 
   writeValue(value: T | T[]) {
-    console.log('writeValue', value);
     const labelFn = this.optionLabel();
     const keyFn = this.optionKey();
     const searchByFn = this.searchBy();

@@ -27,11 +27,10 @@
              (keydown)="preventKeydownPropagation($event)"
              autocomplete="off"/>
 
-      @if (searchFormControl.value) {
-        <mat-icon fontIcon="close"
-                  class="search__clear-btn"
-                  (click)="$event.stopPropagation();clearSearch();"/>
-      }
+      <mat-icon fontIcon="close"
+                class="search__clear-btn"
+                [class.search__clear-btn--active]="!!searchFormControl.value"
+                (click)="$event.stopPropagation();clearSearch();"/>
     </div>
 
     @for (option of filteredWrappedOptions(); track option.key) {
