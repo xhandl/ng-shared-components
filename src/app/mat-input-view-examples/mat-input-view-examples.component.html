@@ -1,0 +1,53 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <div class="title">
+        Mat-Input View
+      </div>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="examples">
+      <div class="example" [formGroup]="form">
+        <div>
+          <xh-mat-input-view [value]="formValue().value"
+                             [label]="formValue().label"
+                             [placeholder]="formValue().placeholder"
+                             [appearance]="formValue().appearance"
+                             [required]="formValue().required"/>
+        </div>
+
+        <mat-divider class="divider"/>
+
+        <div>
+          <mat-form-field>
+            <mat-label>Value</mat-label>
+            <input matInput formControlName="value" placeholder="Enter field value..."/>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Label</mat-label>
+            <input matInput formControlName="label" placeholder="Enter field label..."/>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Placeholder</mat-label>
+            <input matInput formControlName="placeholder" placeholder="Enter field placeholder..."/>
+          </mat-form-field>
+        </div>
+        <div class="appearance">
+          <mat-radio-group formControlName="appearance">
+            <mat-radio-button value="fill">Fill</mat-radio-button>
+            <mat-radio-button value="outline">Outline</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div>
+          <mat-checkbox formControlName="required">Required</mat-checkbox>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,6 @@
+<mat-form-field class="xh-mat-input-view" [appearance]="appearance()" floatLabel="always">
+  @if (label()) {
+    <mat-label>{{ label() }}</mat-label>
+  }
+  <input matInput [value]="value()" [placeholder]="placeholder()" disabled [required]="required()"/>
+</mat-form-field>

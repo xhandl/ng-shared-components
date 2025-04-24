@@ -36,3 +36,25 @@ Selector: `xh-advanced-mat-select`
 | @Input()<br/>optionKey: (item: T) => K          | `(item: T) => item as unknown as K`          | Function to get the key for an option. The key is used to track and compare options. |
 | @Input()<br/>searchBy: (option: T) => string    | `(option: T) => option as unknown as string` | Function to get the search string for an option.                                     |
 | @Input()<br/>panelWidth: string                 | `'auto'`                                     | Width of the select panel.                                                           |
+
+# Mat-Input View
+
+Angular Material Input with view mode.
+
+- Allows to easily create forms in view mode.
+- Great replacement for disabled inputs.
+- Good option for displaying selected data from select inputs.
+
+### API
+
+Selector: `xh-mat-input-view`
+
+#### Properties:
+
+| Name and Type                                | Default  | Description                     |
+|----------------------------------------------|----------|---------------------------------|
+| @Input()<br/>value: string                   | `''`     | Value to display. Required.     |
+| @Input()<br/>label: string                   | `''`     | Label for the input.            |
+| @Input()<br/>placeholder: string             | `''`     | Placeholder text for the input. |
+| @Input()<br/>appearance: 'fill' \| 'outline' | `'fill'` | Appearance style of the input.  |
+| @Input()<br/>required: boolean               | `false`  | Whether the input is required.  |

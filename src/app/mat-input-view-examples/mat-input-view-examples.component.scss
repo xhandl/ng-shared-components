@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  padding: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.example {
+  padding: 20px;
+}
+
+.divider {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.appearance {
+  margin-bottom: 20px;
+}

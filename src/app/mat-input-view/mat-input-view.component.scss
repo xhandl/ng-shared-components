@@ -1,0 +1,16 @@
+@use '@angular/material' as mat;
+
+.xh-mat-input-view {
+  width: 100%;
+}
+
+.xh-mat-input-view {
+  @include mat.form-field-overrides((
+    // Override disabled color of the label and input text in the filled variant
+    filled-disabled-label-text-color: var(--mdc-filled-text-field-label-text-color, var(--mat-sys-on-surface-variant)),
+    filled-disabled-input-text-color: var(--mdc-filled-text-field-input-text-color, var(--mat-sys-on-surface)),
+    // Override disabled the color of the label and input text in the outlined variant
+    outlined-disabled-label-text-color: var(--mdc-outlined-text-field-label-text-color, var(--mat-sys-on-surface-variant)),
+    outlined-disabled-input-text-color: var(--mdc-outlined-text-field-input-text-color, var(--mat-sys-on-surface)),
+  ));
+}
